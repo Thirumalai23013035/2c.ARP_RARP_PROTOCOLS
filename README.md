@@ -17,45 +17,36 @@ stored.
 5. Map the IP address with its MAC address and return the MAC address to client.
 P
 ## PROGRAM - ARP
+CLIENT:
+![Screenshot 2024-03-12 221638](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/4ffc0246-35e2-4742-9319-c5247ac69b0d)
 
-~~~
-import socket 
-s=socket.socket() 
-s.bind(('localhost',8000)) 
-s.listen(5) 
-c,addr=s.accept() 
-address={"165.165.80.80":"6A:08:AA:C2","165.165.79.1":"8A:BC:E3:FA"}; 
-while True: 
-            ip=c.recv(1024).decode() 
-            try: 
-                c.send(address[ip].encode()) 
-            except KeyError: 
-                c.send("Not Found".encode())
-~~~
+SERVER:
+![Screenshot 2024-03-12 221708](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/dfbfb0ad-103e-4f6c-ac23-6c5328281582)
+
 
 ## OUPUT - ARP
-![Screenshot 2024-03-12 155554](https://github.com/Thirumalai23013035/2c.ARP_RARP_PROTOCOLS/assets/153185249/09e552aa-8993-49c0-a80d-102bf1f3133c)
+CLIENT:
+![Screenshot 2024-03-12 221602](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/86eaf2c5-c2ad-45ad-8516-94c552ad7e85)
 
-
+SERVER:
+![Screenshot 2024-03-12 221547](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/eb0568ed-9994-4368-9642-f11c236b491c)
 
 ## PROGRAM - RARP
-~~~
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-while True:
-    ip=input("Enter logical Address : ")
-    s.send(ip.encode())
-    print("MAC Address",s.recv(1024).decode())
+CLIENT:
+![Screenshot 2024-03-12 222427](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/4acde846-5cd1-4e89-a4b3-3a59b796d1de)
 
-~~~
 
-   
+SERVER:
+![Screenshot 2024-03-12 222445](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/fd8ee541-3abb-4682-92da-2a9c07a6cdc8)
 
 
 ## OUPUT -RARP
-![Screenshot 2024-03-12 155824](https://github.com/Thirumalai23013035/2c.ARP_RARP_PROTOCOLS/assets/153185249/c72c4d1c-db47-488e-b8d7-edb1df3e4043)
+CLIENT:
+![Screenshot 2024-03-12 222404](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/bd0243a5-e870-4102-9df8-2803da345df2)
 
+
+SERVER:
+![Screenshot 2024-03-12 222345](https://github.com/arulsuriyalokeshy/2c.ARP_RARP_PROTOCOLS/assets/149130151/c7aa1e24-2072-4c7d-9281-262a76a84698)
 
 
 ## RESULT
